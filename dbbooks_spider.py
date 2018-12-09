@@ -44,7 +44,7 @@ MYSQL_CONFIG = {
         'HOST': '127.0.0.1',
         'PORT': 3306,
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'wlpepsi3590010732',
         'DB': 'test1',
         'CHARSET': 'utf8'},
     'PRODUCT_ENV': {
