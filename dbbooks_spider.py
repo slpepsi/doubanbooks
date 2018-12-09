@@ -5,7 +5,6 @@ import hashlib
 import os
 import re
 import random
-import chardet
 import logging
 import logging.config
 from logging.handlers import RotatingFileHandler
@@ -46,7 +45,7 @@ MYSQL_CONFIG = {
         'PORT': 3306,
         'USER': 'root',
         'PASSWORD': '',
-        'DB': 'test',
+        'DB': 'test1',
         'CHARSET': 'utf8'},
     'PRODUCT_ENV': {
 
@@ -249,18 +248,6 @@ class DBBookSpider(object):
         else:
             result = ['-'] * 5
         return result
-
-    @staticmethod
-    def notify_unicode(str1):
-        if len(str1) == 0:
-            pass
-        elif isinstance(str1, unicode):
-            pass
-        else:
-            str1_encoding = chardet.detect(str1)['encoding']
-            str1 = str1.decode(str1_encoding, 'ignore')
-            # str1 = str1.encode('utf-8', 'ignore')
-        return str1
 
     def _parse_tag(self, response, item):
         if response:
